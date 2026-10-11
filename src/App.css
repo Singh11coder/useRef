@@ -1,0 +1,25 @@
+form{
+  padding:20px;
+  display: flex;
+  flex-direction: column;
+  width:45%;
+  background-color: gray;
+  border-radius: 20px;
+  margin:40px;
+}
+span{
+  font-size:30px;
+  margin-left:20px;
+}
+input,select{
+  height:40px;
+  margin:20px;
+}
+
+button{
+  height:40px;
+  margin:0px 20px;
+  background-color: blue;
+  color:white;
+  border-radius: 20px;
+}
