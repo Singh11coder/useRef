@@ -1,7 +1,8 @@
 import React,{useRef} from 'react'
 import {useForm} from 'react-hook-form';
 
-const RHF = () => {
+const RHF = ({setUserData,setToggle,userData}) => {
+   
    const {
     register, 
     handleSubmit, 
@@ -15,6 +16,10 @@ const RHF = () => {
 
   const formSubmit = (data) => {
     console.log(data);
+    setUserData(prev => [...prev,data]);
+    setToggle(prev => !prev);
+    reset();
+    localStorage.setItem("users",JSON.stringify(userData));
     
   }
 
@@ -80,7 +85,7 @@ const RHF = () => {
            type="text" placeholder="image url"/>
            {errors.Image && <p>{errors.Image.message}</p>}
 
-          <button type="submit">Submit</button>
+          <button class="create" type="submit">Submit</button>
        </form>
     </div>
   )
